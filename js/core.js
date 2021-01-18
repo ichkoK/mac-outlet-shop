@@ -40,7 +40,7 @@ const renderItem = (item) => {
       <div class="main__img-block">
          <img
             class="main__img"
-            src="/img/${item.imgUrl}"
+            src="img/${item.imgUrl}"
             alt="cartImg"
          />
       </div>
