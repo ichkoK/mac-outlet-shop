@@ -5,6 +5,31 @@ const cElem = (tName, cName, text) => {
 	return elem;
 };
 
+// ----- Search filter -----
+
+class searchFilter {
+	constructor() {
+		this.renderItems = [...items];
+	}
+
+	filterByName(value) {
+		value = value.toLowerCase();
+		this.renderItems = items.filter((item) => {
+			const name = item.name.toLowerCase();
+			return name.includes(value);
+		});
+		renderCards(this.renderItems);
+	}
+}
+
+const filter = new searchFilter();
+
+document.getElementById("searchInput").addEventListener("input", (e) => {
+	filter.filterByName(e.target.value);
+});
+
+// ----- Item template -----
+
 const renderItem = (item) => {
 	const container = cElem("div", "main__card shadow");
 	container.innerHTML = `
@@ -82,6 +107,8 @@ const renderItem = (item) => {
 
 	return container;
 };
+
+// ----- Render cards -----
 
 const renderCards = (items) => {
 	const container = document.querySelector(".main");

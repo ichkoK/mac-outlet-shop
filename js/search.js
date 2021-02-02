@@ -28,8 +28,14 @@ function close(id, speed) {
 window.onload = function () {
 	const searchFormSort = document.getElementById("search-form__sort");
 	const searchSubSort = document.getElementById("search-sub__sort");
+	const searchFormFilter = document.getElementById("search-form__filter");
+	const searchSubFilter = document.getElementById("filter-sub__sort");
 
 	searchFormSort.onclick = () => {
+		if (searchSubFilter.style.display !== "none") {
+			close("filter-sub__sort", 50);
+		}
+
 		if (searchSubSort.style.display == "none") {
 			searchSubSort.style.display = "block";
 			searchSubSort.style.opacity = 0;
@@ -51,10 +57,11 @@ window.onload = function () {
 		}, 100);
 	};
 
-	const searchFormFilter = document.getElementById("search-form__filter");
-	const searchSubFilter = document.getElementById("filter-sub__sort");
-
 	searchFormFilter.onclick = () => {
+		if (searchSubSort.style.display !== "none") {
+			close("search-sub__sort", 50);
+		}
+
 		if (searchSubFilter.style.display == "none") {
 			searchSubFilter.style.display = "flex";
 			searchSubFilter.style.opacity = 0;
