@@ -89,7 +89,7 @@ const renderItem = (item) => {
          </svg>
          <p class="main__review-p">
             <span class="main__review-span-num bold"
-               >0</span
+               >${item.orderInfo.reviews}</span
             ><span class="bold">%</span> Positive reviews<br />
             <span class="main__review-span-str"
                >Above avarage</span
@@ -98,7 +98,7 @@ const renderItem = (item) => {
       </div>
       <div class="main__bottom-right">
          <p class="main__orders-p">
-            <span class="main__orders-span bold">0</span
+            <span class="main__orders-span bold">${item.orderInfo.reviews}</span
             ><br />orders
          </p>
       </div>

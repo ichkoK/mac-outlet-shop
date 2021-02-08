@@ -427,12 +427,7 @@ h4 {
   margin-right: 20px;
   width: 20px;
   height: 20px;
-  transition: 0.3s;
   user-select: none;
-}
-
-.search-form__input-submit:hover {
-  transform: scale(1.2);
 }
 
 .search-form__input-text {
